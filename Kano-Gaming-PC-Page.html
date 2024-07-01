@@ -56,8 +56,9 @@
         }
 
         #fpsSection {
-            position: sticky;
-            top: 20px;
+            position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 20px;
             width: 100%;
             max-width: 350px;
             background-color: #f0f0f0;
@@ -101,17 +102,82 @@
             text-align: center;
         }
     </style>
+        <script>
+            const fpsData = {
+                '1080': [
+                    ['Fortnite', '77'],
+                    ['Call of Duty WarZone', '73'],
+                    ['Apex Legends', '92'],
+                    ['League of Legends', '360'],
+                    ['Cyberpunk 2077', '58'],
+                    ['Grand Theft Auto V', '93'],
+                ],
+                '1440': [
+                    ['Fortnite', '64'],
+                    ['Call of Duty WarZone', '55'],
+                    ['Apex Legends', '69'],
+                    ['League of Legends', '272'],
+                    ['Cyberpunk 2077', '44'],
+                    ['Grand Theft Auto V', '70'],
+                ],
+                '4k': [
+                    ['Fortnite', '38'],
+                    ['Call of Duty WarZone', '29'],
+                    ['Apex Legends', '36'],
+                    ['League of Legends', '141'],
+                    ['Cyberpunk 2077', '23'],
+                    ['Grand Theft Auto V', '93'],
+                ]
+            };
+    
+            function showFPS(resolution) {
+                const buttons = document.querySelectorAll('.btnrow1');
+                buttons.forEach(button => {
+                    button.style.backgroundColor = '#dbdae1';
+                    button.style.color = '#868996';
+                });
+    
+                const activeBtn = document.getElementById('btn' + resolution);
+                activeBtn.style.backgroundColor = 'white';
+                activeBtn.style.color = 'black';
+    
+                const table = document.getElementById('fpsTable');
+                const data = fpsData[resolution];
+                let rows = '';
+                data.forEach(game => {
+                    // Check FPS value and set color
+                    let fpsValue = parseInt(game[1]);
+                    let color = 'green'; // Default color
+                    if (fpsValue < 30) {
+                        color = 'red'; // Set color to red for FPS below 30
+                    } else if (fpsValue >= 30 && fpsValue < 60) {
+                        color = 'orange'; // Set color to orange for FPS between 30 and 60
+                    }
+    
+                    rows += `<tr style="border-bottom: 1px solid #dbdae1;">
+                                <td style="padding: 8px; text-align: left;">${game[0]}</td>
+                                <td style="padding: 8px; text-align: right;">
+                                    <div style="font-size: 16px; font-weight: bold; color: ${color};">${game[1]}</div>
+                                    <div style="font-size: 12px; color: #868996; margin-left:20px">FPS</div>
+                                </td>
+                             </tr>`;
+                });
+                table.innerHTML = rows;
+            }
+    
+            window.onload = function () {
+                showFPS('1080'); // Default selection
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child"></script>
+        
 </head>
 
 <body>
     <p style="font-size: 26px; font-weight: bold;">Overview</p>
     <p>Introducing the<strong> GS-COM KANO GAMING PC </strong>– an entry-level powerhouse designed for performance at
         an affordable price. Featuring the AMD RYZEN 5 5500 6-Core 4.2GHz processor and MSI GeForce RTX™ 3050 VENTUS 2X
-        XS 8G OC graphics card, this build delivers excellent gaming performance...................................</p>
-        <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
-        <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
-        <p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>
-        <p>.</p><p>.</p><p>.</p><p>.</p>
+        XS 8G OC graphics card, this build delivers excellent gaming performance.</p>
     <div id="mainContainer">
         <div id="specSection">
             <h2>Specifications</h2>
@@ -164,82 +230,7 @@
         </div>
     </div>
 <br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
-    <script>
-        const fpsData = {
-            '1080': [
-                ['Fortnite', '77'],
-                ['Call of Duty WarZone', '73'],
-                ['Apex Legends', '92'],
-                ['League of Legends', '360'],
-                ['Cyberpunk 2077', '58'],
-                ['Grand Theft Auto V', '93'],
-            ],
-            '1440': [
-                ['Fortnite', '64'],
-                ['Call of Duty WarZone', '55'],
-                ['Apex Legends', '69'],
-                ['League of Legends', '272'],
-                ['Cyberpunk 2077', '44'],
-                ['Grand Theft Auto V', '70'],
-            ],
-            '4k': [
-                ['Fortnite', '38'],
-                ['Call of Duty WarZone', '29'],
-                ['Apex Legends', '36'],
-                ['League of Legends', '141'],
-                ['Cyberpunk 2077', '23'],
-                ['Grand Theft Auto V', '93'],
-            ]
-        };
-
-        function showFPS(resolution) {
-            const buttons = document.querySelectorAll('.btnrow1');
-            buttons.forEach(button => {
-                button.style.backgroundColor = '#dbdae1';
-                button.style.color = '#868996';
-            });
-
-            const activeBtn = document.getElementById('btn' + resolution);
-            activeBtn.style.backgroundColor = 'white';
-            activeBtn.style.color = 'black';
-
-            const table = document.getElementById('fpsTable');
-            const data = fpsData[resolution];
-            let rows = '';
-            data.forEach(game => {
-                // Check FPS value and set color
-                let fpsValue = parseInt(game[1]);
-                let color = 'green'; // Default color
-                if (fpsValue < 30) {
-                    color = 'red'; // Set color to red for FPS below 30
-                } else if (fpsValue >= 30 && fpsValue < 60) {
-                    color = 'orange'; // Set color to orange for FPS between 30 and 60
-                }
-
-                rows += `<tr style="border-bottom: 1px solid #dbdae1;">
-                            <td style="padding: 8px; text-align: left;">${game[0]}</td>
-                            <td style="padding: 8px; text-align: right;">
-                                <div style="font-size: 16px; font-weight: bold; color: ${color};">${game[1]}</div>
-                                <div style="font-size: 12px; color: #868996; margin-left:20px">FPS</div>
-                            </td>
-                         </tr>`;
-            });
-            table.innerHTML = rows;
-        }
-
-        window.onload = function () {
-            showFPS('1080'); // Default selection
-        };
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js"></script>
-    <script>
-        // Initialize iframe resizing
-        iFrameResize({
-            log: true, // Enable console logging to see debug info (optional)
-            minHeight: '600', // Set minimum height if needed
-            checkOrigin: false // Disable security feature if not needed
-        }, '#productDescriptionFrame');
-    </script>
+<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
 </body>
 
 </html>
