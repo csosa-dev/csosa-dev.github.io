@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Odin Gaming PC</title>
+    <title>Thor-Ti Gaming PC</title>
     <style>
         @font-face {
             font-family: "VeniteAdoremus";
@@ -15,30 +15,36 @@
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+   const fpsData = {
+        '1080': [
+            ['Fortnite', '124'],
+            ['Call of Duty WarZone', '138'],
+            ['Apex Legends', '170'],
+            ['League of Legends', '646'],
+            ['Cyberpunk 2077', '108'],
+            ['Grand Theft Auto V', '168'],
+	    ['Elden Ring', '48'],
 
-        const fpsData = {
-            '1080': [
-                ['Fortnite', 80],
-                ['Call of Duty WarZone', 108],
-                ['Apex Legends', 142],
-                ['League of Legends', 476],
-                ['Cyberpunk 2077', 93],
-                ['Grand Theft Auto V', 133]],
-            '1440': [
-                ['Fortnite', 66],
-                ['Call of Duty WarZone', 82],
-                ['Apex Legends', 112],
-                ['League of Legends', 360],
-                ['Cyberpunk 2077', 78],
-                ['Grand Theft Auto V', 101]],
-            '4k': [
-                ['Fortnite', 42],
-                ['Call of Duty WarZone', 43],
-                ['Apex Legends', 59],
-                ['League of Legends', 188],
-                ['Cyberpunk 2077', 42],
-                ['Grand Theft Auto V', 53]]
-        }
+        ],
+        '1440': [
+            ['Fortnite', '103'],
+            ['Call of Duty WarZone', '104'],
+            ['Apex Legends', '129'],
+            ['League of Legends', '488'],
+            ['Cyberpunk 2077', '81'],
+            ['Grand Theft Auto V', '127'],
+	    ['Elden Ring', '35'],
+        ],
+        '4k': [
+            ['Fortnite', '65'],
+            ['Call of Duty WarZone', '54'],
+            ['Apex Legends', '67'],
+            ['League of Legends', '254'],
+            ['Cyberpunk 2077', '42'],
+            ['Grand Theft Auto V', '66'],
+            ['Elden Ring', '19'],
+        ]
+    };
 
         function showFPS(resolution) {
             const buttons = document.querySelectorAll(".btnrow1");
@@ -86,7 +92,7 @@
 
         <div class="mb-8 text-center">
             <div style="font-family: 'VeniteAdoremus', sans-serif">
-                <h1 class="text-5xl">ODIN Gaming PC</h1>
+                <h1 class="text-5xl">Heimdall Gaming PC</h1>
             </div>
         </div>
 
@@ -94,14 +100,15 @@
             <div class="p-6 m-2">
                 <h3 class="text-3xl font-bold">Overview</h3>
                 <p class="mt-4 text-gray-700">
-                    The all powerfull ODIN Gaming PC, So good we had to give it a panormaic case so you can show all
-                    your friends what they don't have. Powered
-                    by Intel Core i7 paired with the M360 Liquid Cooler, you don't have to worry about impeding climate
-                    change heating up Belize. It come with 32 GB of Kingston Fury Beast RGM RAM, thats enough memory
-                    for gaming and that’s not even counting the 162 tabs you’ll keep open for “research.”. The MSI
-                    GeForce RTX 4060 Ti 3x Ventus serves up visuals so crisp, you’ll
-                    wonder if reality is just a poor man's version of your gaming setup and with 1TB of SSD storage,
-                    you'll have space for every game, mod, and questionable download you’ve ever considered.
+                    Introducing pur pre-built HEIMDALL GAMING PC – an entry-level powerhouse
+                    designed for performance at an affordable price. Featuring the AMD
+                    RYZEN 5 5500 6-Core 4.2GHz processor and MSI GeForce RTX™ 3050
+                    VENTUS 2X 6G OC graphics card, this build is perfect for playing fornight, roblox, minecraft and more.
+                    The Kingston Fury Beast RGB 8GB 3200MHz DDR4
+                    memory provides lightning-fast speeds, while the MSI B450M-A PRO MAX
+                    II motherboard ensures robust and reliable connectivity.The 480GB Green Western Digital PCIe NVMe SSD, you'll enjoy rapid load times
+                    and ample storage space. The MSI MAG A550BN 550W power supply allows
+                    you to overclock your CPU. Gaming for everyone!
                 </p>
             </div>
         </div>
@@ -116,38 +123,35 @@
                 <dl>
                     <dt class="font-bold">CPU</dt>
                     <dd class="mb-2 text-gray-700 last:mb-0">
-                        Intel Core i7 12700F
+                        AMD Ryzen 5 5500 6-Core, 12-Thread 3.6 GHz Socket AM4 65W Desktop Processor
                     </dd>
-
-                    <dt class="font-bold">CPU Cooler</dt>
-                    <dd class="mb-2 text-gray-700 last:mb-0">MSI MAG CORELIQUID M360 AIO CPU Liquid Cooler</dd>
 
                     <dt class="font-bold">Graphics Card</dt>
                     <dd class="mb-2 text-gray-700 last:mb-0">
-                        GeForce RTX™ 4060 Ti VENTUS 2X BLACK 8G OC
+                        MSI GeForce RTX 3050 VENTUS 2X 6G OC
                     </dd>
 
                     <dt class="font-bold">Memory</dt>
                     <dd class="mb-2 text-gray-700 last:mb-0">
-                        Kingston Fury Beast RGB 32GB (2X16GB) 3200MHz DDR4 CL16 Desktop Memory
+                        8GB Kingston FURY Beast 3200MT/s DDR4 CL16 RGB Desktop Memory Single Module
                     </dd>
 
                     <dt class="font-bold">Motherboard</dt>
-                    <dd class="mb-2 text-gray-700 last:mb-0">MSI PRO H610M-G DDR4 Motherboard - Micro ATX</dd>
+                    <dd class="mb-2 text-gray-700 last:mb-0">MSI B450M-A PRO MAX II Motherboard</dd>
 
                     <dt class="font-bold">Storage</dt>
                     <dd class="mb-2 text-gray-700 last:mb-0">
-                        1TB Kingston NV2 M.2 2280 PCIe 4.0 x4 NVMe Solid State Drive
+                        480GB Green Western Digital - Internal hard drive  M.2 Solid state drive
                     </dd>
 
                     <dt class="font-bold">Power Supply</dt>
                     <dd class="mb-2 text-gray-700 last:mb-0">
-                        MSI MAG A750GL PCIE5 80 Plus Modular Power Supply
+                        MSI MAG A550BN - 80 PLUS Bronze Modular Power Supply
                     </dd>
 
                     <dt class="font-bold">Case</dt>
                     <dd class="mb-2 text-gray-700 last:mb-0">
-                        MSI MAG PANO M100R PZ Gaming Case
+                        CoolMaster MasterBox MB320L
                     </dd>
 
                     <dt class="font-bold">Operating System</dt>
